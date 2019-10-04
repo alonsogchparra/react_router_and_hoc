@@ -14,6 +14,12 @@ const reducer = (state = initState, action) => {
         posts: state.posts.concat(action.posts).slice(0, 10)
       }
 
+    case actionTypes.DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter(post => post.id !== action.id)
+      }
+
     default:
       return state;
   }
