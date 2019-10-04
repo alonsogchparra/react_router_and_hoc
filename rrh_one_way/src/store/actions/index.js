@@ -1,0 +1,1 @@
+export { loadingPosts, getPosts, deletePost } from './posts';
