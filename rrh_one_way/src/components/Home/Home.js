@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
 import * as actions from '../../store/actions';
 
@@ -20,7 +21,9 @@ class Home extends Component {
         return (
           <div className="post card" key={post.id}>
             <div className="card-content">
-              <span className="card-title red-text">{post.title}</span>
+              <Link to={{ pathname: `/${post.id}`, search: '', state: { id: post.id, title: post.title, body: post.body } }}>
+                <span className="card-title red-text">{post.title}</span>
+              </Link>
               <p>{post.body}</p>
               <div className="right">ID: {post.id}</div>
             </div>
