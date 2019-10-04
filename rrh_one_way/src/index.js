@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
+import postsReducer from './store/reducers/posts';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  posts: postsReducer
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,7 +20,7 @@ const app = (
   <Provider store={store}>
     <App />
   </Provider>
-)
+);
 
 ReactDOM.render(app, document.getElementById('root'));
 
