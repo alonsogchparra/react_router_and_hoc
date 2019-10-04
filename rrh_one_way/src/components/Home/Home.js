@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Spinner from '../Spinner/Spinner';
 import * as actions from '../../store/actions';
 
 class Home extends Component {
@@ -14,10 +15,29 @@ class Home extends Component {
 
   render () {
 
-    console.log('home', this.props);
+    const postsList = this.props.posts.length ? (
+      this.props.posts.map(post => {
+        return (
+          <div className="post card" key={post.id}>
+            <div className="card-content">
+              <span className="card-title red-text">{post.title}</span>
+              <p>{post.body}</p>
+              <div className="right">ID: {post.id}</div>
+            </div>
+          </div>
+        )
+      })
+    ) : (
+      <div className="center">
+        <Spinner />
+        <div>Not Posts Yet.</div>
+      </div>
+    )
+
     return (
-      <div>
-        {this.props.posts.map(post => <li key={post.id}>{post.title} ID:{post.id}</li>)}
+      <div className="container home">
+      <h4 className="center">Home</h4>
+        {postsList}
       </div>
     )
   }
