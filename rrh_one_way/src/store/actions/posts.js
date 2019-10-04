@@ -16,3 +16,10 @@ export const loadingPosts = (posts) => {
     posts
   }
 }
+
+export const deletePost = (id) => {
+  return {
+    type: actionTypes.DELETE_POST,
+    id
+  }
+}
