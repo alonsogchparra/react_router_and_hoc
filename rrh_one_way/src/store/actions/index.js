@@ -1,1 +1,1 @@
-export { loadingPosts, getPosts } from './posts';
+export { loadingPosts, getPosts, deletePost } from './posts';
