@@ -20,6 +20,7 @@ class Home extends Component {
       this.props.posts.map(post => {
         return (
           <div className="post card" key={post.id}>
+            <img src="https://purepng.com/public/uploads/large/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825789urzm0.png" alt="a Pokeball"/>
             <div className="card-content">
               <Link to={{ pathname: `/${post.id}`, search: '', state: { id: post.id, title: post.title, body: post.body } }}>
                 <span className="card-title red-text">{post.title}</span>
