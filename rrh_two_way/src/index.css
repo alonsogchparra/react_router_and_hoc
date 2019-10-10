@@ -15,3 +15,26 @@ code {
 .active {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.home .post img {
+  position: absolute;
+  top: 20px;
+  left: -100px;
+  opacity: 0.6;
+  animation: pokeRotation 4s infinite;
+}
+
+.post {
+  padding-left: 80px;
+  overflow: hidden;
+}
+
+@keyframes pokeRotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
