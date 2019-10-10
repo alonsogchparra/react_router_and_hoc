@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Spinner from '../Spinner/Spinner';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Pokeball from '../../pokeball.png'
 // import axios from 'axios';
 
 class Home extends Component {
@@ -26,6 +27,7 @@ class Home extends Component {
         return (
           <div className="post card" key={post.id}>
             <div className="card-content">
+              <img src={Pokeball} alt="A pokeball"/>
               <Link to={`/${post.id}`}>
                 <span className="card-title red-text">{post.title}</span>
               </Link>
