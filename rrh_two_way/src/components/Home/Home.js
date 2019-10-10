@@ -36,8 +36,8 @@ class Home extends Component {
       })
     ) : (
       <div className="container center">
-        <div>Not posts yet.</div>
         <Spinner />
+        <div>Not posts yet.</div>
       </div>
     );
     return (
