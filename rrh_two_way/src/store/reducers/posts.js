@@ -1,3 +1,4 @@
+import { DELETE_POST } from '../actions/actionTypes';
 
 const initState = {
   posts: [
@@ -10,6 +11,13 @@ const initState = {
 const reducer = (state = initState, action) => {
 
   switch(action.type) {
+
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter(post => post.id !== action.id)
+      }
+
     default:
       return state;
   }
