@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.post {
+  padding-left: 80px;
+  overflow: hidden;
+}
+
+.home .post img {
+  position: absolute;
+  width: 150px;
+  top: 20px;
+  left: -80px;
+  opacity: 0.6;
+  animation: pokeRotation 4s infinite;
+}
+
+@keyframes pokeRotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
