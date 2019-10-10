@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import Spinner from '../Spinner/Spinner';
 import { connect } from 'react-redux';
+import { deletePost } from '../../store/actions';
 
 class Post extends Component {
+
+  deletePostHandler = () => {
+    this.props.onDeletePost(this.props.post.id);
+    this.props.history.push('/');
+  }
+
   render () {
     console.log(this.props)
     const post = this.props.post ? (
       <div className="center">
         <h4>{this.props.post.title}</h4>
         <p>{this.props.post.body}</p>
+        <div className="center">
+          <button onClick={this.deletePostHandler} className="btn grey">Delete Post</button>
+        </div>
       </div>
     ) : (
       <div className="center">
@@ -31,4 +41,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(Post);
+const mapDispatchToProps = dispatch => {
+  return {
+    onDeletePost: (id) => dispatch(deletePost(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);
